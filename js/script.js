@@ -31,11 +31,11 @@ console.log(slides);
 new Vue({
     el: "#app",
     data: {
-        
-        
+        x: "",
+        hoverValue: "false",
         i: 0,
         lista: slides,
-        startingImageNumber: 1,
+
         currentImage: "img/01.jpg",
         currentCountry: "Svezia",
         currentText: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis."
@@ -50,7 +50,7 @@ new Vue({
             this.currentImage = this.lista[this.i].image;
             this.currentCountry = this.lista[this.i].title;
             this.currentText = this.lista[this.i].text
-            
+
 
         },
         previousClick() {
@@ -62,13 +62,32 @@ new Vue({
             this.currentCountry = this.lista[this.i].title;
             this.currentText = this.lista[this.i].text
         },
-        onDirectClick(valoreLista,index){
-            this.currentImage=valoreLista.image
-            this.currentCountry=valoreLista.title
-            this.currentText=valoreLista.text
-            this.i=index
+        onDirectClick(valoreLista, index) {
+            this.currentImage = valoreLista.image
+            this.currentCountry = valoreLista.title
+            this.currentText = valoreLista.text
+            this.i = index
             console.log(index);
 
-        }
+        },
+
     },
+    mounted() {
+        this.x = setInterval(() => {
+            this.i++
+
+            if (this.i == 5) { this.i = 0 }
+
+
+            this.currentImage = this.lista[this.i].image;
+            this.currentCountry = this.lista[this.i].title;
+            this.currentText = this.lista[this.i].text
+
+
+        }, 3000);
+
+    },
+
+
 })
+
