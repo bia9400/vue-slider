@@ -41,21 +41,29 @@ new Vue({
     methods: {
         nextClick() {
             this.i++
-            
+
             if (this.i == 5) { this.i = 0 }
 
 
             this.currentImage = this.lista[this.i].image;
-            this.currentCountry=this.lista[this.i].title;
-            this.currentText=this.lista[this.i].text
+            this.currentCountry = this.lista[this.i].title;
+            this.currentText = this.lista[this.i].text
 
         },
         previousClick() {
-            
+
             this.i--
             if (this.i < 0) { this.i = 4 }
 
             this.currentImage = this.lista[this.i].image
         },
+        onDirectClick(valoreLista,index){
+            this.currentImage=valoreLista.image
+            this.currentCountry=valoreLista.title
+            this.currentText=valoreLista.text
+            this.i=index
+            console.log(index);
+
+        }
     },
 })
