@@ -29,8 +29,8 @@
                 <div class="thumbs">
                     <div class="prev " @click="previousClick"></div>
                     <div class="next" @click="nextClick"></div>
-                    <div v-for="(value,index) in lista" class="thumb" @click="onDirectClick(value,index)">
-                        <img :src="value.image" alt="Svezia"/>
+                    <div v-for="(value,index) in lista" class="thumb" :class="index==i ? `active` : `` " @click="onDirectClick(value,index)">
+                        <img :src="value.image" alt="value.title"/>
                     </div>
                     
                 </div>

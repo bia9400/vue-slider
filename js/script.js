@@ -31,6 +31,8 @@ console.log(slides);
 new Vue({
     el: "#app",
     data: {
+        
+        
         i: 0,
         lista: slides,
         startingImageNumber: 1,
@@ -48,6 +50,7 @@ new Vue({
             this.currentImage = this.lista[this.i].image;
             this.currentCountry = this.lista[this.i].title;
             this.currentText = this.lista[this.i].text
+            
 
         },
         previousClick() {
