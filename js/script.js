@@ -29,8 +29,29 @@ const slides = [
 console.log(slides);
 
 new Vue({
-    el:"#app",
-    data:{
-        lista:slides,
-    }
+    el: "#app",
+    data: {
+        i: 1,
+        lista: slides,
+        startingImageNumber: 1,
+        currentImage: "img/01.jpg",
+        currentCountry: "Svezia",
+        currentText: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis."
+    },
+    methods: {
+        nextClick() {
+            this.i++
+            if (this.i == 6) { this.i = 1 }
+
+
+            this.currentImage = `img/0${this.i}.jpg`
+        },
+        previousClick() {
+            
+            this.i--
+            if (this.i == 0) { this.i = 5 }
+
+            this.currentImage = `img/0${this.i}.jpg`
+        },
+    },
 })
