@@ -56,6 +56,8 @@ new Vue({
             if (this.i < 0) { this.i = 4 }
 
             this.currentImage = this.lista[this.i].image
+            this.currentCountry = this.lista[this.i].title;
+            this.currentText = this.lista[this.i].text
         },
         onDirectClick(valoreLista,index){
             this.currentImage=valoreLista.image
