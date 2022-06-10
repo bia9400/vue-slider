@@ -27,3 +27,10 @@ const slides = [
 ];
 
 console.log(slides);
+
+new Vue({
+    el:"#app",
+    data:{
+        lista:slides,
+    }
+})
