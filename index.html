@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                <div class="thumbs" @mouseover="hoverValue=true" @mouseleave="hoverValue = false">
+                <div class="thumbs"  v-on:mouseleave="arzebaan" v-on:mouseover="moseHoverStop">
                     <div class="prev " @click="previousClick"></div>
                     <div class="next" @click="nextClick"></div>
                     <div v-for="(value,index) in lista" class="thumb" :class="index==i ? `active` : `` "

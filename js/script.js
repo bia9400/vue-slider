@@ -32,7 +32,7 @@ new Vue({
     el: "#app",
     data: {
         x: "",
-        hoverValue: "false",
+        
         i: 0,
         lista: slides,
 
@@ -70,7 +70,24 @@ new Vue({
             console.log(index);
 
         },
-
+        moseHoverStop(){
+            clearInterval(this.x);
+        },
+        arzebaan() {
+            this.x = setInterval(() => {
+                this.i++
+    
+                if (this.i == 5) { this.i = 0 }
+    
+    
+                this.currentImage = this.lista[this.i].image;
+                this.currentCountry = this.lista[this.i].title;
+                this.currentText = this.lista[this.i].text
+    
+    
+            }, 3000);
+    
+        }
     },
     mounted() {
         this.x = setInterval(() => {
